@@ -20,13 +20,13 @@ export function StartScreen({ start }) {
   return (
     <div className="px-7 py-14 md:px-10 md:py-10 h-screen flex justify-center items-center">
       <div className="md:w-screen md:h-full md:pt-56 bg-[#FDF3FA] md:flex md:flex-col flex flex-col items-center gap-9 py-[78px] px-[70px] rounded-lg">
-     <h2 className="text-[#EC5BA1] font-bold text-2xl md:text-5xl">Memory</h2>
-        <p className="text-[#EC5BA1] font-semibold text-sm md:text-2xl">Flip over tiles looking for pairs</p>
+    <h2 className="text-[#EC5BA1] font-bold text-2xl md:text-2xl">Memory</h2>
+      <p className="text-[#EC5BA1] font-semibold text-sm md:text-2xl">Flip over tiles looking for pairs</p>
         <button onClick={start} className="bg-[#EC5BA1] text-white px-12 py-[12px] rounded-full font-medium text-sm md:text-2xl">
         Play
       </button>
-    </div>
       </div>
+    </div>
   );
 }
 
@@ -114,18 +114,18 @@ export function PlayScreen({ end }) {
   return (
     <>
       <div className="bg-white px-4 md:px-7 py-14 h-screen flex flex-col gap-12 justify-center items-center">
-        <span className="flex flex-row justify-center items-center gap-2 text-[#6466E9] text-lg font-semibold">
-        Tries <h3 className="bg-[#C9D2FB] px-3 text-lg font-semibold text-[#6466E9] rounded-md">{tryCount}</h3>
-        </span>
+       <span className="flex flex-row justify-center items-center gap-2 text-[#6466E9] text-lg font-semibold">
+       Tries  <h3 className="bg-[#C9D2FB] px-3 text-lg font-semibold text-[#6466E9] rounded-md">{tryCount}</h3>
+       </span>
         <div className="bg-[#EFF2FE] p-3 rounded-lg">
-        <div className="grid grid-cols-4 md:grid-cols-4 gap-3 cursor-pointer">
+          <div className="grid grid-cols-4 md:grid-cols-4 gap-3 cursor-pointer">
         {getTiles(16).map((tile, i) => (
           <Tile key={i} flip={() => flip(i)} {...tile} />
         ))}
       </div>
+          </div>
         </div>
-        </div>
-     
+      {tryCount}
     </>
   );
 }
